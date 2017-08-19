@@ -9,6 +9,10 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var StartLable: UILabel!
+    @IBOutlet weak var startButon: UIButton!
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +22,19 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    @IBAction func startSpy(_ sender: UIButton) {
+        if StartLable.text == "Start Spy" {
+            StartLable.text = "Spy Started...";
+            StartLable.textColor = UIColor.red;
+            startButon.setTitle("Stop", for: .normal);
+                        
+        }else{
+            StartLable.textColor = UIColor.black;
+            StartLable.text = "Start Spy";
+            startButon.setTitle("Start", for: .normal);
+            
+        }
     }
 
 
